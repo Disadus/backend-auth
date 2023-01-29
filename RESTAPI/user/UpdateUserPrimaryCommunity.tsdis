@@ -1,0 +1,32 @@
+import { updateUser } from "../../Helpers/DisadusAPIClient/UserAPIs";
+import { RESTHandler, RESTMethods } from "../../server";
+
+export const UpdateUserCommunity = {
+  path: "/user/@me/update/updatePrimaryCommunity",
+  method: RESTMethods.POST,
+  sendUser: true,
+  run: async (req, res, next, user) => {
+    if (!user) {
+      res.status(401).send("Unauthorized");
+      return;
+    }
+    let community = req.body.primaryCommunity as string;
+    if (!community) {
+      res.status(400).send("No community specified");
+      return;
+    }
+    if (!user.communities?.find((c) => c === community)) {
+      res.status(400).send("User is not a member of this community");
+      return;
+    }
+    await updateUser(user.id, {
+      $set: {
+        primaryCommunity: community,
+      },
+    });
+    res.status(200).send({
+      primaryCommunity: community,
+    });
+  },
+} as RESTHandler;
+export default UpdateUserCommunity;

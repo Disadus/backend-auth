@@ -1,0 +1,29 @@
+{
+  "name": "backend-auth",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/Disadus/backend-auth.git",
+  "author": "John Li (Tet) <tet@tet.moe>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^4.13.0",
+    "password-hash-and-salt": "^0.1.4",
+    "socket.io": "^4.5.4",
+    "tetion-server-boilerplate": "^0.0.6"
+  },
+  "scripts": {
+    "dev": "ts-node server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/password-hash-and-salt": "^0.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
