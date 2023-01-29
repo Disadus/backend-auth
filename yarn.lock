@@ -1548,10 +1548,10 @@ strnum@^1.0.5:
   resolved "https://registry.yarnpkg.com/strnum/-/strnum-1.0.5.tgz#5c4e829fe15ad4ff0d20c3db5ac97b73c9b072db"
   integrity sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==
 
-tetion-server-boilerplate@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/tetion-server-boilerplate/-/tetion-server-boilerplate-0.0.6.tgz#3368b0428d6404fdf22af9602b729ff39e3fb3e4"
-  integrity sha512-GI1avUtomtg9e63qKWPbOeaAgiwB7MAJ+EoSJCXPov/M+Z4eM/RzcEEa9QG5IK2qxHR4+mEg44ZUbSNILEOdfA==
+tetion-server-boilerplate@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/tetion-server-boilerplate/-/tetion-server-boilerplate-0.1.8.tgz#68653efa944db988592833646e163142eb25b118"
+  integrity sha512-IrdejuJqwkEFX4JeG4DAMgTOohoJmzpjFZm6bQL8fHqpXh8hKC80KfKetGvZhh5JXXWjh/YNhHgBEvEelTKTnw==
   dependencies:
     "@types/express" "^4.17.16"
     cors "^2.8.5"

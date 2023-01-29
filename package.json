@@ -13,7 +13,7 @@
     "mongodb": "^4.13.0",
     "password-hash-and-salt": "^0.1.4",
     "socket.io": "^4.5.4",
-    "tetion-server-boilerplate": "^0.0.6"
+    "tetion-server-boilerplate": "^0.1.8"
   },
   "scripts": {
     "dev": "ts-node server.ts",

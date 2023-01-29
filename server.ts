@@ -1,5 +1,5 @@
 import { MongoClient } from "mongodb";
-import { RESTServer } from "tetion-server-boilerplate";
+import { RESTServer, SocketServer } from "tetion-server-boilerplate";
 import { Encryptions } from "./helpers/Encryptions";
 import { getUser } from "./helpers/UserAPIs";
 import dotenv from "dotenv";
@@ -26,4 +26,18 @@ MongoConnection.connect().then(() => {
     },
   });
   server.import(`${__dirname}/RESTAPI`);
+  const socketServer = new SocketServer({
+    authCheck: async (socket) => {
+      if (!socket.handshake.headers.authorization) return false;
+      const userID = await Encryptions.decryptUserToken(
+        socket.handshake.headers.authorization
+      ).catch(null);
+      if (!userID) return false;
+      return true;
+    },
+    server: server,
+    forceAuth: true,
+  });
+  socketServer.import(`${__dirname}/SocketAPI`);
 });
+
